@@ -9,7 +9,7 @@ namespace Tony.Interceptor
     /// <summary>
     /// 拦截器拦截处理接口
     /// </summary>
-    public interface IInterceptHandler
+    public interface IInterceptor
     {
         /// <summary>
         /// 执行方法之前处理
