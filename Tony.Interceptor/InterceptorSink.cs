@@ -74,7 +74,7 @@ namespace Tony.Interceptor
                 if (dicInterceptoredMethod.ContainsKey(message.MethodBase))
                 {
                     var intercepterType = dicInterceptoredMethod[message.MethodBase];
-                    var interceptor = Activator.CreateInstance(intercepterType) as IInterceptHandler;
+                    var interceptor = Activator.CreateInstance(intercepterType) as IInterceptor;
                     interceptor.BeforeInvoke(message.MethodBase);
                     var resultMessage = nextSink.SyncProcessMessage(message);
                     interceptor.AfterInvoke(resultMessage.Properties["__Return"], message.MethodBase);
